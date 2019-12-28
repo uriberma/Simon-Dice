@@ -34,16 +34,32 @@ div.blue {
     background-color: #21A6B3;
 }
 
+.blue.light {
+    background-color: #7ed6df;
+}
+
 div.violet {
     background-color: #BE2EDD;
+}
+
+.violet.light {
+    background-color: #e056fd;
 }
 
 div.orange {
     background-color: #F0922A;
 }
 
+.orange.light {
+    background-color: #ffbe76;
+}
+
 div.green {
     background-color: #6AB04C;
+}
+
+.green.light {
+    background-color: #badc58;
 }
 
 button#start-game {
