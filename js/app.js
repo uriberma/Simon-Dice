@@ -11,16 +11,19 @@ class Game {
     }
 
     init() {
+        this.selectColor = this.selectColor.bind(this);
         startGameBtn.classList.add('hide');
         this.generateSequence();
-        this.level = 10;
+        this.level = 1;
         this.colors = {
             blue,
             violet,
             orange,
             green
-        }
-        this.nextLevel()
+        };
+
+        this.nextLevel();
+        this.addClickEvents();
     }
 
     generateSequence() {
@@ -62,6 +65,17 @@ class Game {
 
     turnOffColorLight(color) {
         this.colors[color].classList.remove('light')
+    }
+
+    addClickEvents() {
+        this.colors.blue.addEventListener('click', this.selectColor)
+        this.colors.violet.addEventListener('click', this.selectColor)
+        this.colors.orange.addEventListener('click', this.selectColor)
+        this.colors.green.addEventListener('click', this.selectColor)
+    }
+
+    selectColor (ev) {
+        console.log(this)
     }
 }
 
