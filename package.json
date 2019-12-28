@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "http-server --port 8200"
+    "dev": "live-server --port=8200 --watch= "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "http-server": "^0.12.0"
+    "live-server": "^1.2.1"
   }
 }

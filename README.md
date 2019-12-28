@@ -1,4 +1,4 @@
-# GAME USING VANILLA JavaScript
+# Game using vanilla JavaScript
 
 ### How to play?
 
