@@ -46,7 +46,7 @@ class Game {
     nextLevel() {
         this.subLevel = 0;
         if (this.level === 1) {
-            const CASUAL_SONG = new Audio('../songs/casual.wav');
+            const CASUAL_SONG = new Audio('./../songs/casual.wav');
             CASUAL_SONG.play();
             swal('Good Look 😜', `Level ${this.level}`, {
                 buttons: false,
@@ -56,7 +56,7 @@ class Game {
                     setTimeout(this.illuminateSequence, 1200);
                 })
         } else {
-            const CORRECT_SONG = new Audio('../songs/correct.wav');
+            const CORRECT_SONG = new Audio('./../songs/correct.wav');
             CORRECT_SONG.play();
             setTimeout(() => {
                 swal('Good Job 😌', `Ready for level ${this.level}?? 😜`)
@@ -98,7 +98,7 @@ class Game {
         for (let i=0; i<this.level; i++) {
             const color = this.transformNumberToColor(this.sequence[i]);
             setTimeout(() => {
-                const ACTION_SONG = new Audio('../songs/action.wav');
+                const ACTION_SONG = new Audio('./../songs/action.wav');
                 ACTION_SONG.play();
                 this.illuminateColor(color);
             }, 1200 * i)
