@@ -4,7 +4,7 @@ let violet = document.querySelector('.violet');
 let orange = document.querySelector('.orange');
 let green = document.querySelector('.green');
 let startGameBtn = document.querySelector('#start-game');
-const LAST_LEVEL = 10;
+const LAST_LEVEL = 15;
 
 class Game {
     constructor() {
@@ -46,13 +46,20 @@ class Game {
     nextLevel() {
         this.subLevel = 0;
         if (this.level === 1) {
-            swal('Good Look 😜', `Level ${this.level}`)
+            const CASUAL_SONG = new Audio('../songs/casual.wav');
+            CASUAL_SONG.play();
+            swal('Good Look 😜', `Level ${this.level}`, {
+                buttons: false,
+                timer: 3000,
+            })
                 .then(() => {
                     setTimeout(this.illuminateSequence, 1200);
                 })
         } else {
+            const CORRECT_SONG = new Audio('../songs/correct.wav');
+            CORRECT_SONG.play();
             setTimeout(() => {
-                swal('Good Job 😌', `Level ${this.level}. Ready for more ?? 😜`)
+                swal('Good Job 😌', `Ready for level ${this.level}?? 😜`)
                 .then(() => {
                     setTimeout(this.illuminateSequence, 1200);
                 })
@@ -91,8 +98,10 @@ class Game {
         for (let i=0; i<this.level; i++) {
             const color = this.transformNumberToColor(this.sequence[i]);
             setTimeout(() => {
+                const ACTION_SONG = new Audio('../songs/action.wav');
+                ACTION_SONG.play();
                 this.illuminateColor(color);
-            }, 1000 * i)
+            }, 1200 * i)
         }
     }
 
@@ -143,6 +152,8 @@ class Game {
     }
 
     winGame() {
+        const WIN_SONG = new Audio('../songs/win.mp3');
+        WIN_SONG.play();
         swal('YOU WIN!! 🤩', 'Cogratulations!! you have successfully completed the game', 'success')
             .then(() => {
                 this.removeClickEvents();
@@ -151,6 +162,8 @@ class Game {
     }
 
     lostGame() {
+        const ERROR_SONG = new Audio('../songs/error.wav');
+        ERROR_SONG.play();
         swal('GAME OVER 🙁', 'Sorry, you lose', 'error')
             .then(() => {
                 this.removeClickEvents();
