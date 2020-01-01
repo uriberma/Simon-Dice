@@ -4,4 +4,4 @@
 
 1. npm install
 2. npm run dev
-3. Enjoy!
+3. open new tab in your browser the adress: http://127.0.0.1:8200
