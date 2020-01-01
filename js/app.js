@@ -15,6 +15,7 @@ class Game {
         this.selectColor = this.selectColor.bind(this);
         this.nextLevel = this.nextLevel.bind(this);
         this.toggleStartBtn = this.toggleStartBtn.bind(this);
+        this.illuminateSequence = this.illuminateSequence.bind(this);
 
         this.toggleStartBtn();
         this.generateSequence();
@@ -43,8 +44,20 @@ class Game {
     }
 
     nextLevel() {
-        this.subLevel = 0
-        this.illuminateSequence()
+        this.subLevel = 0;
+        if (this.level === 1) {
+            swal('Good Look 😜', `Level ${this.level}`)
+                .then(() => {
+                    setTimeout(this.illuminateSequence, 1200);
+                })
+        } else {
+            setTimeout(() => {
+                swal('Good Job 😌', `Level ${this.level}. Ready for more ?? 😜`)
+                .then(() => {
+                    setTimeout(this.illuminateSequence, 1200);
+                })
+            }, 700);
+        }
         this.addClickEvents();
     }
 
@@ -121,7 +134,7 @@ class Game {
                 if (this.level === (LAST_LEVEL + 1)) {
                     this.winGame();
                 } else {
-                    setTimeout(this.nextLevel, 1500)
+                    this.nextLevel();
                 }
             }
         } else {
