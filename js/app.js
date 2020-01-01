@@ -162,7 +162,7 @@ class Game {
     }
 
     lostGame() {
-        const ERROR_SONG = new Audio('https://github.com/uriberma/memory-game/blob/master/songs/error.wav');
+        const ERROR_SONG = new Audio('./../songs/error.wav');
         ERROR_SONG.play();
         swal('GAME OVER 🙁', 'Sorry, you lose', 'error')
             .then(() => {
