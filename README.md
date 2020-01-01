@@ -1,7 +1,7 @@
 # Game using vanilla JavaScript
 
-### How to play?
+### How to test the game?
 
-* npm install
-* npm run dev
-* Enjoy!
+1. npm install
+2. npm run dev
+3. Enjoy!
